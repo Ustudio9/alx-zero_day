@@ -1,11 +1,12 @@
 #include <stdio.h>
 /*
  *
- * main: void
- * Description - C program that prints exactly with
+ * main - Entry point
+ *
+ * Description: C program that prints exactly with
  * proper grammar, but the outcome is a piece of art,
  *
- * Return: 0
+ * Return: Always 0 (Success)
 */
 int main(void)
 {

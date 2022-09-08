@@ -1,9 +1,8 @@
 #include <stdio.h>
 /*
  *
- * main - Entry point
- *
- *
+ * main - print the string in the function
+ * Description - C program that prints exactly with proper grammar, but the outcome is a piece of art,
  *
  * Return: Always 0 (Success)
 */

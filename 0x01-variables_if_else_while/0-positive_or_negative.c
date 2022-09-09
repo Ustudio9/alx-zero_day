@@ -12,7 +12,7 @@ int main(void)
 	int n;
 
 	srand(time(0));
-	n = read() - RAND_MAX / 2;
+	n = fread() - RAND_MAX / 2;
 	if ( n > 0 )
 	{
 		printf("%d is positive\n", n);

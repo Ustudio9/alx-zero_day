@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - print tripple combo
  * Return: Always 0 (Success
@@ -6,37 +7,29 @@
  */
 int main(void)
 {
-	int a, b, c;
+	int n, m, l;
 
-	a = 48;
-	b = 48;
-	c = 48;
-
-	while (a < 58)
+	for (n = 48; n < 58; n++)
 	{
-		b = a + 1;
-		while (b < 58)
+		for (m = 49; m < 58; m++)
 		{
-			c = b + 1;
-			while (c < 58;)
+			for (l = 50; l < 58; l++)
 			{
-				putchar(a);
-				putchar(b);
-				putchar(c);
-				if (a < 55 || b < 56 || c < 57)
+				if (l > m && m > n)
 				{
-					putchar(',');
-					putchar(' ');
+					putchar(n);
+					putchar(m);
+					putchar(l);
+					if (n != 55 || m != 56)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 				}
-				c++;
 			}
-			b++;
 		}
-
-		a++;
 	}
-
-	putchar(10);
-
+	putchar('\n');
 	return (0);
 }
+

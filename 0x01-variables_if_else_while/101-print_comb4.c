@@ -12,11 +12,13 @@ int main(void)
 	b = 48;
 	c = 48;
 
-	while (a < 58; a++)
+	while (a < 58)
 	{
-		while (b < 58; b++)
+		b = a + 1;
+		while (b < 58)
 		{
-			while (c < 58; c++)
+			c = b + 1;
+			while (c < 58;)
 			{
 				putchar(a);
 				putchar(b);
@@ -26,8 +28,12 @@ int main(void)
 					putchar(44);
 					putchar(32);
 				}
+				c++;
 			}
+			b++;
 		}
+
+		a++;
 	}
 
 	putchar(10);

@@ -1,4 +1,5 @@
-#include "main.h"
+#include <main.h>
+#include <stdio.h>
 
 /**
  * print_alphabet - prints the english alphabet from a-z

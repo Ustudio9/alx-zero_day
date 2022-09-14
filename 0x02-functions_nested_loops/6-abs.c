@@ -5,7 +5,7 @@
  * Return: 0 (Success)
  */
 
-int _abs(int)
+int _abs(int n)
 {
 	n = n % 10;
 

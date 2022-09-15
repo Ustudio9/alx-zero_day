@@ -4,10 +4,11 @@
  * @nld: number's last digit result
  * Return: value of the last digit
  */
+
 int print_last_digit(int nld)
 {
-
 	int pld;
+
 	pld = (nld % 10);
 
 	if (pld < 0)

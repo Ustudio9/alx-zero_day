@@ -1,4 +1,4 @@
-10-add.c
+#include "main.h"
 /**
  * add - a function that add two integers and return result
  * @one: first number

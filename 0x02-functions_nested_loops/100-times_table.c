@@ -50,5 +50,5 @@ void print_times_table(int n)
 		_putchar('\n');
 		a++;
 	}
-	return (0);
+	return;
 }

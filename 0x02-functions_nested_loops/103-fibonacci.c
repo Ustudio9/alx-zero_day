@@ -1,4 +1,5 @@
 #include <stdio.h>
+$include "main.h"
 /**
  * main - print sum of even valued terms
  * followed by a new line

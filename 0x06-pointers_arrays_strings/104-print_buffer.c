@@ -1,6 +1,6 @@
 #include "main.h"
 /*
- * print_buffer - Prints a buffer 10 bytes at a time
+ * print_buffer - a function that prints a buffer.
  * @b: The buffer to be printed.
  * @size: The number of bytes to be printed from the buffer.
  */

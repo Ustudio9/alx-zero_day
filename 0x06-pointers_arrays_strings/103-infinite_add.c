@@ -15,6 +15,7 @@ p = &n;
 * - you are not allowed to modify p
 * - only one statement
 * - you are not allowed to code anything else than this line of code
+*   main - infinite_add
 */
 
 p[5] = 98;

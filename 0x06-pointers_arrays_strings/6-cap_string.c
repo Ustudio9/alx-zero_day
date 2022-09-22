@@ -1,60 +1,108 @@
 #include "main.h"
 
 /**
- * cap_string - Capitalizes all words of a string.
- * @str: The string to be capitalized.
- *
- * Return: A pointer to the changed string.
+ * separator - checks if character is a seperator
+ * @c: character to be checked
+ * Return: if seperator return 1. Otherwise return 0;
  */
 
-char *cap_string(char *str)
+
+int separator(char c)
 
 {
 
-int index = 0;
+	/*Delcaring condition switch*/
 
-while (str[index])
+	switch (c)
+
+	{
+
+	case ' ':
+
+	case '\t':
+
+	case '\n':
+
+	case ',':
+
+	case ';':
+
+	case '.':
+
+	case '!':
+
+	case '?':
+
+	case '"':
+
+	case '(':
+
+	case ')':
+
+	case '{':
+
+	case '}':
+
+		return (1);
+
+
+
+	default:
+
+		return (0);
+
+	}
+
+
+
+}
+
+/**
+ * cap_string - capitalizes chars after given deliminators
+ * @s: string to uppercase
+ * Return: returns modified string
+ */
+
+char *cap_string(char *s)
 
 {
 
-while (!(str[index] >= 'a' && str[index] <= 'z'))
+	int count, upper;
 
-index++;
 
-if (str[index - 1] == ' ' ||
 
-str[index - 1] == '\t' ||
+	upper = -32; /*value constant 32*/
 
-str[index - 1] == '\n' ||
 
-str[index - 1] == ',' ||
 
-str[index - 1] == ';' ||
+	count = 0;
 
-str[index - 1] == '.' ||
+	/*Start WHILE*/
 
-str[index - 1] == '!' ||
+	while (s[count] != '\0')
 
-str[index - 1] == '?' ||
+	{
 
-str[index - 1] == '"' ||
+		/*letters lowercase*/
 
-str[index - 1] == '(' ||
+		if (s[count] >= 'a' && s[count] <= 'z')
 
-str[index - 1] == ')' ||
+		{
 
-str[index - 1] == '{' ||
+			/*Convert uppercase*/
 
-str[index - 1] == '}' ||
+			if (s[count] == *s || separator(s[count - 1]))
 
-index == 0)
 
-str[index] -= 32;
 
-index++;
+				s[count] += upper;
 
-}
+		}
 
-return (str);
+		count++; /*Add count*/
 
-}
+	}
+
+	return (s);
+
+}

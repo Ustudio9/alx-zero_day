@@ -1,4 +1,8 @@
 #include <stdio.h>
+/**
+ * main - a function that adds two numbers.
+ * Return: 0
+ */
 
 int main(void)
 

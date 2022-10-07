@@ -1,73 +1,75 @@
-#include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
-
-int find_len(char *str);
-
-char *create_xarray(int size);
-
-char *iterate_zeroes(char *str);
-
-void get_prod(char *prod, char *mult, int digit, int zeroes);
-
-void add_nums(char *final_prod, char *next_prod, int next_len);
-
+#include "holberton.h"
 /**
- * find_len - Finds the length of a string.
- * @str: The string to be measured.
- * Return: The length of the string
- */
-int find_len(char *str)
+ * _puts - prints a string, followed by a new line,
+ * @str: pointer to the string to print
+ * Return: void
+*/
+void _puts(char *str)
 {
-int len = 0;
-while (*str++)
-len++;
-return (len);
-
-}
-
-/**
- * create_xarray - Creates an array of chars and initializes it with
- *                 the character 'x'. Adds a terminating null byte.
- * @size: The size of the array to be initialized.
- *
- * Description: If there is insufficient space, the
- *              function exits with a status of 98.
- * Return: A pointer to the array.
- */
-
-char *create_xarray(int size)
-
+int i = 0;
+while (str[i])
 {
-char *array;
-int index;
-array = malloc(sizeof(char) * size);
-if (array == NULL)
-exit(98);
-for (index = 0; index < (size - 1); index++)
-array[index] = 'x';
-array[index] = '\0';
-return (array);
+	_putchar(str[i]);
+	i++;
 }
-
+}
 /**
- * iterate_zeroes - Iterates through a string of numbers containing
- *                  leading zeroes until it hits a non-zero number.
- * @str: The string of numbers to be iterate through.
- *
- * Return: A pointer to the next non-zero element.
+ * _atoi - convert a string to an integer.
+ * @s: char type string
+ * Return: integer converted
  */
-
-char *iterate_zeroes(char *str)
-
+int _atoi(const char *s)
 {
+    int sign = 1;
+	unsigned long int resp = 0, firstNum, i;
+	for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
+	{
+		if (s[firstNum] == '-')
+		{
+			sign *= -1;
+		}
+	}
+	for (i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
+	{
+		resp *= 10;
+		resp += (s[i] - 48);
+	}
 
-while (*str && *str == '0')
-str++;
-return (str);
-
+	return (sign * resp);
 }
-
-
-
 /**
+ * print_int - prints an integer.
+ * @n: int
+ * Return: 0
+ */
+void print_int(unsigned long int n)
+{
+unsigned  long int divisor = 1, i, resp;
+for (i = 0; n / divisor > 9; i++, divisor *= 10)
+;
+for (; divisor >= 1; n %= divisor, divisor /= 10)
+{
+	resp = n / divisor;
+	_putchar('0' + resp);
+}
+}
+/**
+ * main - print the result of the multiplication, followed by a new line
+ * @argc: int
+ * @argv: list
+ * Return: 0
+ */
+int main(int argc, char const *argv[])
+{
+(void)argc;
+
+if (argc != 3)
+{
+	_puts("Error ");
+	exit(98);
+}
+print_int(_atoi(argv[1]) * _atoi(argv[2]));
+_putchar('\n');
+
+return (0);
+}

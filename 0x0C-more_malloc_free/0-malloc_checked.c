@@ -3,7 +3,6 @@
 
 
 /**
-
  * malloc_checked - Allocates memmory using malloc.
  * @b: The number of bytes to be allocated
  *
